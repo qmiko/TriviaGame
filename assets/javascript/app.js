@@ -27,11 +27,6 @@ $(document).ready(function () {
         }
     ];
 
-    // function startGame() {
-    //     // $('.start-button').remove();
-    //     // runQuestions();
-    // };
-
     function runQuestions() {
         timer();
         correct = triviaQuestions[newQ].correct;
@@ -65,37 +60,14 @@ $(document).ready(function () {
             $('.time-remaining').text(sec--).css({
                 'font-family': 'Courier New'
             });
+            //how to get "times up" to stay and timer to actually stop?
             if (sec == -1) {
-                $('.time-remaining');
+                $('.time-remaining').fadeOut('slow').text("times up").css({
+                    'font-family': 'Courier New'
+                });
                 clearInterval(timer);
             }
         }, 1000);
-        // time = 3;
-        // // timer = setInterval(function() {
-        //   time--;
-        // //   $('.time-remaining').html(time);
-        // //   if (time === 0) {
-        // //     clearInterval(timer);
-        // //   }
-        // // }, 1000);
-        // function myFunction() {
-        //     timer = setTimeout(function(){ alert("Hello"); }, 3000);
-        //   }
-
-
-        // time--;
-        // $('.time-remaining').text(time + " seconds left...").css({
-        //     'font-family': 'Courier New'
-        // });
-        // var time = 3
-        // var timer2 = setInterval(function () {
-        //     time--;
-        //     $('.time-remaining').html(time + " seconds left...");
-        //     if (time === 0) {
-        //         clearInterval(timer2);
-        //     }
-        // }, 1000);
-
     }
     function myStopFunction() {
         clearTimeout(timer);
@@ -107,4 +79,8 @@ $(document).ready(function () {
         runQuestions();
     })
 
+    //reset idea..? where to place?
+    // function resetFunction(){
+    //     $('.quizzie').reset();
+    // }
 })
