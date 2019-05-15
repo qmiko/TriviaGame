@@ -60,14 +60,29 @@ $(document).ready(function () {
     }
     //timer function
     function timer() {
-        time = 3;
-        timer = setInterval(function() {
-          time--;
-          $('.time-remaining').html(time);
-          if (time === 0) {
-            clearInterval(timer);
-          }
+        var sec = 10
+        var timer = setInterval(function () {
+            $('.time-remaining').text(sec--).css({
+                'font-family': 'Courier New'
+            });
+            if (sec == -1) {
+                $('.time-remaining');
+                clearInterval(timer);
+            }
         }, 1000);
+        // time = 3;
+        // // timer = setInterval(function() {
+        //   time--;
+        // //   $('.time-remaining').html(time);
+        // //   if (time === 0) {
+        // //     clearInterval(timer);
+        // //   }
+        // // }, 1000);
+        // function myFunction() {
+        //     timer = setTimeout(function(){ alert("Hello"); }, 3000);
+        //   }
+
+
         // time--;
         // $('.time-remaining').text(time + " seconds left...").css({
         //     'font-family': 'Courier New'
@@ -81,6 +96,9 @@ $(document).ready(function () {
         //     }
         // }, 1000);
 
+    }
+    function myStopFunction() {
+        clearTimeout(timer);
     }
     $('.start-button').on("click", function () {
         // $('.start-button');
