@@ -1,0 +1,20 @@
+body {
+    background: url("../images/flowers.jpg");
+}
+.container{
+    margin-top: 10%;
+    padding-top: 10%;
+    background-color: whitesmoke;
+    padding-bottom: 10%;
+    border-radius: 25px;
+}
+.start-button{
+    font-family: 'Courier New', Courier, monospace; 
+}
+h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace; 
+}
+div{
+    text-align: center
+}
