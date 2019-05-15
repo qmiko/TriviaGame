@@ -1,6 +1,5 @@
 $(document).ready(function () {
     //Create game variables
-    var time = 11;
     var correctAns = 0;
     var incorrectAns = 0;
     var newQ = 0;
@@ -53,6 +52,7 @@ $(document).ready(function () {
             }
         });
     }
+
     //timer function
     function timer() {
         var sec = 10
@@ -61,7 +61,7 @@ $(document).ready(function () {
                 'font-family': 'Courier New'
             });
             //how to get "times up" to stay and timer to actually stop?
-            if (sec == -1) {
+            if (sec === 0) {
                 $('.time-remaining').fadeOut('slow').text("times up").css({
                     'font-family': 'Courier New'
                 });
@@ -69,9 +69,12 @@ $(document).ready(function () {
             }
         }, 1000);
     }
-    function myStopFunction() {
-        clearTimeout(timer);
-    }
+    
+    //absolutely cannot figure out how to make the timer stop
+    // function myStopFunction() {
+    //     clearTimeout(timer);
+    // }
+
     $('.start-button').on("click", function () {
         // $('.start-button');
         // startGame();
